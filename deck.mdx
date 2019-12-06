@@ -49,10 +49,13 @@ You can also call me _Leo_
 <Small>And video tutorials on methodcoder.com <Emoji svg text="😄" /></Small>
 
 <Notes>
-
+<h2>
 Hello everyone, my name is Xiaoru Li. You can also call me Leo. 
+</h2>
 
+<h2>
 I come from China, currently studying CS in Karlsruhe. I post crash courses like Learn GraphQL in 10 tweets on Twitter as twitter threads and I also have a YouTube channel called the Method Coder where I make short coding tutorials.
+</h2>
 
 </Notes>
 
@@ -60,7 +63,11 @@ I come from China, currently studying CS in Karlsruhe. I post crash courses like
 
 # Command-Line Interfaces
 
-<Notes>So, today we are going to talk about building Command Line Interface apps.</Notes>
+<Notes>
+<h2>
+So, today we are going to talk about building Command Line Interface apps.
+</h2>
+</Notes>
 
 ---
 
@@ -68,7 +75,11 @@ I come from China, currently studying CS in Karlsruhe. I post crash courses like
 
 # It's almost 2020, so why? <Emoji svg text="🤔" />
 
-<Notes>But these kind of applications have already been there since the 60s, I mean it's almost 2020 now, so why do we still bother building them?</Notes>
+<Notes>
+<h2>
+But these kind of applications have already been there since the 60s, I mean it's almost 2020 now, so why do we still bother building them?
+</h2>
+</Notes>
 
 ---
   <h1>
@@ -83,11 +94,17 @@ I come from China, currently studying CS in Karlsruhe. I post crash courses like
 </Appear>
 
 <Notes>
+<h3>
 Well, as it turns out, these apps are still extremely relevant today.
+</h3>
 
+<h3>
 And especially if you are a developer, we rely on CLI apps like git, create-react-app daily, because they are fast and practical.
+</h3>
 
+<h3>
 And if you are building a library or framework, a CLI companion app, maybe one that helps bootstrapping new projects, would be super valuable to the end users as part of the toolchain.
+</h3>
 </Notes>
 
 ---
@@ -96,7 +113,11 @@ And if you are building a library or framework, a CLI companion app, maybe one t
 
 ## building a CLI app with Node?
 
-<Notes>So how do we start building them with JavaScript and node?</Notes>
+<Notes>
+<h2>
+So how do we start building them with JavaScript and node?
+</h2>
+</Notes>
 
 ---
 
@@ -110,7 +131,11 @@ then run  <i> `node index.js`</i>
 
 # <Emoji svg text=":D" />
 
-<Notes>Well, surprisingly easy - we just save console.log "hello world" to a JS file and run it with Node.</Notes>
+<Notes>
+<h2>
+Well, surprisingly easy - we just save console.log "hello world" to a JS file and run it with Node.
+</h2>
+</Notes>
 
 ---
 
@@ -118,7 +143,11 @@ then run  <i> `node index.js`</i>
 
 ### Bold, italics, colors, updates...
 
-<Notes>But if we want to make things a little bit more interesting, like make the font bold, render colors, or update what's already printed to the screen...</Notes>
+<Notes>
+<h2>
+But if we want to make things a little bit more interesting, like make the font bold, render colors, or update what's already printed to the screen...
+</h2>
+</Notes>
 
 ---
 
@@ -133,9 +162,13 @@ then run  <i> `node index.js`</i>
 </Appear>
 
 <Notes>
+<h2>
 We will need ANSI escape sequences to do this.
+</h2>
 
+<h2>
 And they are super ugly if we just use them directly.
+</h2>
 
 </Notes>
 
@@ -143,7 +176,11 @@ And they are super ugly if we just use them directly.
 
 ## If we want to print colored text... <Emoji svg text="🤔" />
 
-<Notes>So if we want to print colored text for example,</Notes>
+<Notes>
+<h2>
+So if we want to print colored text for example,
+</h2>
+</Notes>
 
 ---
 
@@ -177,7 +214,9 @@ console.log(
 </div>
 
 <Notes>
+<h2>
 We'll then need to write a whole bunch of nonsense non-printable stuff to do the formatting. And we'll have to always remember to reset styling at the end.
+</h2>
 </Notes>
 
 ---
@@ -185,8 +224,9 @@ We'll then need to write a whole bunch of nonsense non-printable stuff to do the
 ## If we want to update printed text... <Emoji svg text="🤔" />
 
 <Notes>
+<h2>
 And if we want to update printed text,
-
+</h2>
 </Notes>
 
 ---
@@ -206,7 +246,9 @@ function simpleClock() {
 Move 1000 columns to the left, remove everything till end of the line
 
 <Notes>
+<h2>
 For example to print this simple clock that update the current time, we will need to do stuff like this.
+</h2>
 </Notes>
 
 ---
@@ -216,9 +258,12 @@ For example to print this simple clock that update the current time, we will nee
 ### And we want to update multiple chunks simultaneously... <Emoji svg text="😂" />
 
 <Notes>
+<h2>
 And not to mention that today we can resize our terminal windows, so we can't hardcode the height and width anymore.
-
+</h2>
+<h2>
 And things get even trickier when we want to update chunks of the UI simultaneously...
+</h2>
 </Notes>
 
 ---
@@ -241,7 +286,11 @@ And things get even trickier when we want to update chunks of the UI simultaneou
 
 Real time status <Emoji svg text="🧭" /> Keyboard interaction <Emoji svg text="👨‍💻" />
 
-<Notes>Like Jest's CLI for example.</Notes>
+<Notes>
+<h2>
+Like Jest's CLI for example.
+</h2>
+</Notes>
 
 ---
 
@@ -263,11 +312,17 @@ Real time status <Emoji svg text="🧭" /> Keyboard interaction <Emoji svg text=
 </Appear>
 
 <Notes>
+<h2>
 That's when Ink comes into the rescue.
+</h2>
 
+<h2>
 It's a custom React renderer that renders components to text, with all the ANSI stuff together.
+</h2>
 
+<h2>
 And it lets us use Flexbox for the layout. How cool is that?
+</h2>
 </Notes>
 
 ---
@@ -285,7 +340,9 @@ import Ascii from "ink-ascii";
 Import built-in & 3rd party Ink components <Emoji svg text="☝️" />
 
 <Notes>
+<h2>
 So building Ink apps is like building any other React apps. We import the stuff we need, and we write custom components.
+</h2>
 </Notes>
 
 ---
@@ -294,7 +351,11 @@ So building Ink apps is like building any other React apps. We import the stuff 
 
 <img src="./images/wiki-client.png" />
 
-<Notes>For example, if we want to build something like this wiki app,</Notes>
+<Notes>
+<h2>
+For example, if we want to build something like this wiki app,
+</h2>
+</Notes>
 
 ---
 
@@ -318,7 +379,11 @@ render(<Wiki />);
 
 Just like building any React app <Emoji svg text="☝️" />
 
-<Notes>We can write JSX for the UI, as simple as that.</Notes>
+<Notes>
+<h2>
+We can write JSX for the UI, as simple as that.
+</h2>
+</Notes>
 
 ---
 
@@ -336,7 +401,11 @@ Just like building any React app <Emoji svg text="☝️" />
   }}
 />
 
-<Notes>And here's how it looks like</Notes>
+<Notes>
+<h2>
+And here's how it looks like
+</h2>
+</Notes>
 
 ---
 
@@ -346,7 +415,11 @@ Just like building any React app <Emoji svg text="☝️" />
 
 MDX rendered directly to the terminal!
 
-<Notes>And with Ink, we can actually also render MDX to the terminal. This would be very useful for building help manuals for the app.</Notes>
+<Notes>
+<h2>
+And with Ink, we can actually also render MDX to the terminal. This would be very useful for building help manuals for the app.
+</h2>
+</Notes>
 
 ---
 
@@ -355,7 +428,9 @@ MDX rendered directly to the terminal!
 <Image src="./images/pastel-logo.png" style={{height: "50vh", width: "50vw"}} size="contain" />
 
 <Notes>
+<h2>
 And with a framework based on Ink called Pastel
+</h2>
 </Notes>
 
 ---
@@ -378,9 +453,13 @@ git-js/
 `git stash pop` anyone?
 
 <Notes>
+<h2>
 We can even build a CLI app like a Next.js app, the difference here is that instead of different routes, we have different subcommands.
+</h2>
 
+<h2>
 Super cool!
+</h2>
 
 </Notes>
 
@@ -392,13 +471,21 @@ Super cool!
 
 ### More suitable for fullscreen apps
 
-<Notes>There's another library that let's us write React for CLI apps, called react-blessed, and it's more suitable for fullscreen apps like a text editor.</Notes>
+<Notes>
+<h2>
+There's another library that let's us write React for CLI apps, called react-blessed, and it's more suitable for fullscreen apps like a text editor.
+</h2>
+</Notes>
 
 ---
 
 <Image src="./images/thats-all-folks.png" size="contain" />
 
-<Notes>And that's all I have for you today, hope you have found it useful!</Notes>
+<Notes>
+<h2>
+And that's all I have for you today, hope you have found it useful!
+</h2>
+</Notes>
 
 ---
 
