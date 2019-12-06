@@ -48,15 +48,27 @@ You can also call me _Leo_
 <br/>
 <Small>And video tutorials on methodcoder.com <Emoji svg text="😄" /></Small>
 
+<Notes>
+
+Hello everyone, my name is Xiaoru Li. You can also call me Leo. 
+
+I come from China, currently studying CS in Karlsruhe. I post crash courses like Learn GraphQL in 10 tweets on Twitter as twitter threads and I also have a YouTube channel called the Method Coder where I make short coding tutorials.
+
+</Notes>
+
 ---
 
 # Command-Line Interfaces
+
+<Notes>So, today we are going to talk about building Command Line Interface apps.</Notes>
 
 ---
 
 # CLIs and terminals have been with us since the 60s
 
 # It's almost 2020, so why? <Emoji svg text="🤔" />
+
+<Notes>But these kind of applications have already been there since the 60s, I mean it's almost 2020 now, so why do we still bother building them?</Notes>
 
 ---
   <h1>
@@ -70,13 +82,21 @@ You can also call me _Leo_
   <h2>Your next big project might need a CLI companion!</h2>
 </Appear>
 
+<Notes>
+Well, as it turns out, these apps are still extremely relevant today.
+
+And especially if you are a developer, we rely on CLI apps like git, create-react-app daily, because they are fast and practical.
+
+And if you are building a library or framework, a CLI companion app, maybe one that helps bootstrapping new projects, would be super valuable to the end users as part of the toolchain.
+</Notes>
+
 ---
 
 # How do we start
 
 ## building a CLI app with Node?
 
-<Notes>surprisingly easy</Notes>
+<Notes>So how do we start building them with JavaScript and node?</Notes>
 
 ---
 
@@ -90,11 +110,15 @@ then run  <i> `node index.js`</i>
 
 # <Emoji svg text=":D" />
 
+<Notes>Well, surprisingly easy - we just save console.log "hello world" to a JS file and run it with Node.</Notes>
+
 ---
 
 ## But how can we make things more interesting?
 
 ### Bold, italics, colors, updates...
+
+<Notes>But if we want to make things a little bit more interesting, like make the font bold, render colors, or update what's already printed to the screen...</Notes>
 
 ---
 
@@ -108,9 +132,18 @@ then run  <i> `node index.js`</i>
   </h3>
 </Appear>
 
+<Notes>
+We will need ANSI escape sequences to do this.
+
+And they are super ugly if we just use them directly.
+
+</Notes>
+
 ---
 
 ## If we want to print colored text... <Emoji svg text="🤔" />
+
+<Notes>So if we want to print colored text for example,</Notes>
 
 ---
 
@@ -144,7 +177,7 @@ console.log(
 </div>
 
 <Notes>
-Just to print something like this to the console, we need this
+We'll then need to write a whole bunch of nonsense non-printable stuff to do the formatting. And we'll have to always remember to reset styling at the end.
 </Notes>
 
 ---
@@ -152,7 +185,7 @@ Just to print something like this to the console, we need this
 ## If we want to update printed text... <Emoji svg text="🤔" />
 
 <Notes>
-transition: And there are ANSI escape code exactly for this purpose...
+And if we want to update printed text,
 
 </Notes>
 
@@ -172,11 +205,21 @@ function simpleClock() {
 
 Move 1000 columns to the left, remove everything till end of the line
 
+<Notes>
+For example to print this simple clock that update the current time, we will need to do stuff like this.
+</Notes>
+
 ---
 
 ### Layouts in a pure text environment are even tougher <Emoji svg text="😕" />
 
 ### And we want to update multiple chunks simultaneously... <Emoji svg text="😂" />
+
+<Notes>
+And not to mention that today we can resize our terminal windows, so we can't hardcode the height and width anymore.
+
+And things get even trickier when we want to update chunks of the UI simultaneously...
+</Notes>
 
 ---
 
@@ -198,6 +241,8 @@ Move 1000 columns to the left, remove everything till end of the line
 
 Real time status <Emoji svg text="🧭" /> Keyboard interaction <Emoji svg text="👨‍💻" />
 
+<Notes>Like Jest's CLI for example.</Notes>
+
 ---
 
 ## Behold, we have `Ink`! <Emoji svg text="🌈" />
@@ -217,6 +262,14 @@ Real time status <Emoji svg text="🧭" /> Keyboard interaction <Emoji svg text=
   </div>
 </Appear>
 
+<Notes>
+That's when Ink comes into the rescue.
+
+It's a custom React renderer that renders components to text, with all the ANSI stuff together.
+
+And it lets us use Flexbox for the layout. How cool is that?
+</Notes>
+
 ---
 
 ```jsx
@@ -231,12 +284,17 @@ import Ascii from "ink-ascii";
 
 Import built-in & 3rd party Ink components <Emoji svg text="☝️" />
 
+<Notes>
+So building Ink apps is like building any other React apps. We import the stuff we need, and we write custom components.
+</Notes>
 
 ---
 
 ## An example?
 
 <img src="./images/wiki-client.png" />
+
+<Notes>For example, if we want to build something like this wiki app,</Notes>
 
 ---
 
@@ -260,6 +318,7 @@ render(<Wiki />);
 
 Just like building any React app <Emoji svg text="☝️" />
 
+<Notes>We can write JSX for the UI, as simple as that.</Notes>
 
 ---
 
@@ -277,6 +336,8 @@ Just like building any React app <Emoji svg text="☝️" />
   }}
 />
 
+<Notes>And here's how it looks like</Notes>
+
 ---
 
 ### More awesomeness with Ink
@@ -285,6 +346,8 @@ Just like building any React app <Emoji svg text="☝️" />
 
 MDX rendered directly to the terminal!
 
+<Notes>And with Ink, we can actually also render MDX to the terminal. This would be very useful for building help manuals for the app.</Notes>
+
 ---
 
 ### Even more awesomeness with Ink
@@ -292,9 +355,7 @@ MDX rendered directly to the terminal!
 <Image src="./images/pastel-logo.png" style={{height: "50vh", width: "50vw"}} size="contain" />
 
 <Notes>
-We've been mainly focusing on dynamic user interfaces tonight, but in many cases we actually want as little user interaction with the program as possible, which helps with automation.
-
-Pastel is a framework based on Ink, which looks at how the source code files are structured, then it will use the project structure as its API, very similar to the way you write routes for Next.js.
+And with a framework based on Ink called Pastel
 </Notes>
 
 ---
@@ -317,11 +378,9 @@ git-js/
 `git stash pop` anyone?
 
 <Notes>
-This is particularly useful for building an app with commands and subcommands like git. You can nest directories, and pastel will convert the hierarchy into nested commands. The logic of each command is encapsulated its own React component, so you have a completely modularized application.
+We can even build a CLI app like a Next.js app, the difference here is that instead of different routes, we have different subcommands.
 
-The option and flags passed to the command will be fed into the React component as props.
-
-Super cool.
+Super cool!
 
 </Notes>
 
@@ -333,9 +392,13 @@ Super cool.
 
 ### More suitable for fullscreen apps
 
+<Notes>There's another library that let's us write React for CLI apps, called react-blessed, and it's more suitable for fullscreen apps like a text editor.</Notes>
+
 ---
 
 <Image src="./images/thats-all-folks.png" size="contain" />
+
+<Notes>And that's all I have for you today, hope you have found it useful!</Notes>
 
 ---
 
