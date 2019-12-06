@@ -38,87 +38,55 @@ import Small from "./Small.js";
 
 <Emoji svg text="Hi there! :wave:" />
 
-<h2>My name is Xiaoru Li <Emoji svg text="🇨🇳" /></h2>
-
-<!-- _Not to be confused with_ <img
-  src="./images/xiaomi-logo.png"
-  alt="Xiaomi"
-  style={{ width: "50px", height: "auto" }}
-/> -->
+## My name is Xiaoru Li <Emoji svg text="🇨🇳" />
 
 You can also call me _Leo_
 
-<Small><i>@hexrcs</i> on the web</Small>
+##### *Studying CS in Karlsruhe, Germany*
+
+<Small>I post crash course threads on Twitter as @hexrcs</Small>
 <br/>
-<Small>I post crash course threads on Twitter <Emoji svg text="😄" /></Small>
+<Small>And video tutorials on methodcoder.com <Emoji svg text="😄" /></Small>
 
 ---
 
-# Everything started with the terminal
-
-<Notes>
-Back in the 60s, using commandline interface applications through a terminal is the defacto way users interact with computers
-
-Throughout the years, CLI has evolved, more features were added, but the basic principle remained the same, which is everything is Text based.
-
-</Notes>
+# Command-Line Interfaces
 
 ---
 
-<img
-  src="./images/DEC_VT100_terminal.jpg"
-  alt="VT100"
-  style={{ width: "80%", height: "auto" }}
-/>
+# CLIs and terminals have been with us since the 60s
 
-  <h3>1978, 80x24, ANSI support</h3>
-
-<Notes>
-Among all those terminals, the VT100 is the first to support a standard called the ANSI escape code, which allows meta features like erasing printed text, changing text color, and so on.
-
-Then, Graphical User Interface Operating systems became popular, and that is when we started to use terminal emulators to reproduce a text environment inside a graphical environment. 
-
-The most popular terminal emulator - the xterm, tries to emulate the VT series in its earlier versions. And since then, the 80 characters per line limitation became a tradition, and that's why most code editors and auto-formatters today still default to 80 characters per line.
-</Notes>
+# It's almost 2020, so why? <Emoji svg text="🤔" />
 
 ---
-
-<h1>Command Line Interfaces in 2019?? <Emoji svg text="🤔" /></h1>
-
-<Appear>
-  <h2>
+  <h1>
     Old, but not obsolete <Emoji svg text="💡" />
-  </h2>
+  </h1>
+<Appear>
   <div>
-    In fact, best stuff in the dev world continues to be written for CLI
+     <h3><i>Think git, CRA, test runners...</i></h3>
+     <h2>Practical, fast, developer-friendly!</h2>
   </div>
+  <h2>Your next big project might need a CLI companion!</h2>
 </Appear>
-
-<Notes>
-  Because generally
-  <ul>
-    <li>easier to automate via scripting</li>
-    <li>don't need to use a mouse, accelerates actions per minute count</li>
-    <li>lightweight - can run headlessly</li>
-    <li>SSH over 2G</li>
-  </ul>
-</Notes>
 
 ---
 
 # How do we start
 
-## with Node?
+## building a CLI app with Node?
 
 <Notes>surprisingly easy</Notes>
 
 ---
 
-Obviously...
+We start simple...
 
 ```js
 console.log("Hello World!");
 ```
+
+then run  <i> `node index.js`</i>
 
 # <Emoji svg text=":D" />
 
@@ -131,70 +99,7 @@ one <strong>IMPORTANT</strong> thing to keep in mind is that this console is not
 
 ---
 
-## In a browser, you can use CSS in `console.log`
-
----
-
-```js
-console.log(
-  "%cconsole.log is %cfancy",
-  "color: white; background: orange; font-weight: bold;",
-  "border-style: dashed;  font-size: 25px; margin: 4px;"
-);
-```
-
-<div
-  style={{
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-  }}
->
-  <h2 style={{ margin: "5rem" }}>
-    <Emoji svg text="👉" />
-  </h2>
-  <img src="./images/console.log-css.png" />
-</div>
-
-<Notes>
-Use % C to start a styled chunk, supply the styles for each chunk as additional parameters of the console.log call.
-
-This is possible because the dev tool itself is a webpage, so ...
-
-</Notes>
-
----
-
-<div
-  dangerouslySetInnerHTML={{
-    __html: `
-      <video
-        style="height: 80vh;"
-        loop
-        autoplay
-        muted
-        src="./images/devtools-inception.mp4"
-      />
-    `,
-  }}
-/>
-
-<Notes>
-This is possible because the dev tools themselves are a webpage, so it's only natural that we can use CSS to style things there. And, you can also do something crazy like popping up the devtools of the devtools, of the devtools...
-
-</Notes>
-
----
-
-## Our good ol' Terminal ain't Chrome (or FireFox)
-
-# <Emoji svg text="😔" />
-
-<Notes>
-However, this is not possible in terminal. But as mentioned earlier, we can still bring in colors or font variations to make things interesting.
-
-</Notes>
+## But how can we make things more interesting?
 
 ---
 
@@ -204,16 +109,16 @@ However, this is not possible in terminal. But as mentioned earlier, we can stil
 
 <Appear>
   <h3>
+    Bold, italics, colors, updates...
+  </h3>
+  <h3>
     Boy they are ugly <Emoji svg text="😅" />
   </h3>
 </Appear>
 
-<Notes>
-This is achieved by the standard called ANSI escape code. Those are special character sequences that are used for controling the cursor location, text color, and other options.
+---
 
-And they look pretty ugly if you just wanna look at them.
-
-</Notes>
+## If we want to print colored text... <Emoji svg text="🤔" />
 
 ---
 
@@ -247,36 +152,12 @@ console.log(
 </div>
 
 <Notes>
-So let's have a look at the styling options ANSI escape code give us.
-
-The first character "\u001b" is an invisible non-printable character, signaling the start of an ANSI escape sequence. If you don't reset at the end, all text outputs will be rendered with styles.
-
+Just to print something like this to the console, we need this
 </Notes>
 
 ---
 
-## What else can ANSI escape code do?
-
-<Appear>
-  <h3>
-    Cursor manipulation <Emoji svg text="📝" />
-  </h3>
-</Appear>
-
-<Notes>
-transition: Let's think about how ... (do we remove or overwrite printed text)
-
-</Notes>
-
----
-
-## How do we remove or overwrite printed text? <Emoji svg text="🤔" />
-
-<Appear>
-  <h2>
-    We move the printer head to previous positions <Emoji svg text="💡" />
-  </h2>
-</Appear>
+## If we want to update printed text... <Emoji svg text="🤔" />
 
 <Notes>
 transition: And there are ANSI escape code exactly for this purpose...
@@ -288,47 +169,7 @@ transition: And there are ANSI escape code exactly for this purpose...
 ### A simple clock
 
 ```js
-function clock() {
-  setInterval(() => {
-    const time = moment().format("h:mm:ss a");
-    console.log(time);
-  }, 1000);
-}
-```
-
----
-
-<img src="./images/naive-clock.png" style={{ zoom: 2 }} />
-
-Not so nice <Emoji svg text="😕" />
-
-<Notes>
-=><strong>You may have noticed that there's always a new line after we printed something with console.log, that's because...</strong>
-
-</Notes>
-
----
-
-### Under the hood
-
-```
-console.log()
-```
-
-is based on the low level
-
-```
-process.stdout.write()
-```
-
-with an extra "new line" on the end
-
----
-
-### A better clock
-
-```js
-function betterClock() {
+function simpleClock() {
   setInterval(() => {
     const time = moment().format("h:mm:ss a");
     process.stdout.write("\u001b[1000D\u001b[K");
@@ -341,71 +182,9 @@ Move 1000 columns to the left, remove everything till end of the line
 
 ---
 
-## Surely there're npm packages
+### Layouts in a pure text environment are even tougher <Emoji svg text="😕" />
 
-## that encapsulate these low level tasks
-
-# Right? <Emoji svg text=":D" />
-
----
-
-<Image src="./images/node-cli-awesome-list.png" size="contain" />
-
----
-
-## What we've just learned can easily be done
-
-## with libraries like `chalk` and `log-update`
-
----
-
-### Write ReactDayBerlin with colored `chalks`
-
-<!-- prettier-ignore -->
-```js
-console.log(
-  chalk.white.bgBlue.bold(
-    "ReactDay" +
-    chalk.red.bgWhite("Berlin")
-  )
-)
-```
-
-No more %\$#@&\*! <Emoji svg text=":D" />
-
----
-
-### A new clock with `log-update`
-
-```js
-function bestClock() {
-  setInterval(() => {
-    const time = moment().format("h:mm:ss a");
-    logUpdate(time);
-  }, 1000);
-}
-```
-
-Keeps rewriting onto a "session"
-
-<Notes>
-No need reinventing wheels.
-
-</Notes>
-
----
-
-# Good CLI apps should be
-
-## interactive, dynamic and responsive
-
-<Notes>
-User should be constantly provided with the latest information, and the 
-interface should not fall apart inside a non-standard dimension.
-
-Because we resize terminal windows all the time.
-
-</Notes>
+### And we want to update multiple chunks simultaneously... <Emoji svg text="😂" />
 
 ---
 
@@ -429,17 +208,11 @@ Real time status <Emoji svg text="🧭" /> Keyboard interaction <Emoji svg text=
 
 ---
 
-## We have the building blocks
-
-### But layouts in a pure text environment are still tough <Emoji svg text="😕" />
-
-### Managing updates for multiple chunks is even tougher <Emoji svg text="😂" />
-
----
-
 ## Behold, we have `Ink`! <Emoji svg text="🌈" />
 
 ![Ink logo](./images/ink-logo.png)
+
+*from @vadimdemedes and @sindresorhus*
 
 <Appear>
   <div style={{ marginTop: "4em" }}>
@@ -447,79 +220,10 @@ Real time status <Emoji svg text="🧭" /> Keyboard interaction <Emoji svg text=
       <Emoji svg text="✅" /> Custom React renderer
     </h3>
     <h3>
-      <Emoji svg text="✅" /> Flexbox magic in the terminal
+      <Emoji svg text="✅" /> Flexbox magic in the terminal <Emoji svg text="🤯" />
     </h3>
   </div>
 </Appear>
-
----
-
-# React is a paradigm
-
----
-
-### Reusable components
-
-<Appear>
-  <h3>Design views for each state</h3>
-  <h3>Blackbox diff checker</h3>
-  <h3>Bring your own "renderer"</h3>
-</Appear>
-
-<Notes>
-1. Views are consisted of <strong>reusable components</strong>
-
-2. We design simple views for each state in the application, so app behavior is predictable.
-
-We essentially say, if we have this state, the app should look like this; if the state changes, the app should look like that. Declarative, no need to do things imperatively...
-
-3. Because library itself boiled down to its essence = a just powerful blackbox diff checker, to efficiently update just the right parts based on state changes.
-
-Here, we don't need to manually remove col X to col Y, we just say, we want a timer at this position, saying 1s when the state is 1s, we want it say 2s when it's 2s. React, you take care of finding out what parts to add or remove.
-
-4. You can write custom renderers to interpret React's internal virtual DOM. That's why it is not just a web interface library, there're RN, ReactVR and so on, including Ink.
-
-</Notes>
-
----
-
-# Flexbox for text based interfaces?
-
-<Appear>
-  <h3>That way we don't need to count absolute columns or rows by hand...</h3>
-  <h3>Automatic width, heights, margins...</h3>
-  
-  <h2>Flexbox just flows like water</h2>
-</Appear>
-
-# <Emoji svg text="🤔" />
-
-<Notes>I'm not an expert on CSS...</Notes>
-
-
----
-
-### flex-direction
-
-<img src="./images/flex-direction.gif"  />
-
-
-
-### justify-content
-
-<img src="./images/justify-content.gif" />
-
-
-
-### align-items
-
-<img src="./images/align-items.gif" />
-
----
-
-# Let's have a closer look at Ink!
-
-# <Emoji svg text=":D" />
 
 ---
 
@@ -533,7 +237,7 @@ import TextInput from "ink-text-input";
 import Ascii from "ink-ascii";
 ```
 
-Import built-in Ink components and 3rd party utilities <Emoji svg text="☝️" />
+Import built-in 3rd party Ink components <Emoji svg text="☝️" />
 
 <Notes>
 There are also pre-built 3rd party components, which are specialized at making colorful text or capturing keystokes, making our life much easier
@@ -544,42 +248,7 @@ NOTE that if you are using TS, the imports have to be transpiled to the conventi
 
 ---
 
-```jsx
-const Counter = () => {
-  const [value, setValue] = useState(0);
-  useInput(() => setValue(value + 1));
-
-  return (
-    <Box marginY={3} justifyContent="center">
-      <Box>Press any key to increment: {value}</Box>
-    </Box>
-  );
-};
-
-render(<Counter />);
-```
-
-Classic counter example, CLI edition <Emoji svg text="☝️" />
-
----
-
-<div
-  dangerouslySetInnerHTML={{
-    __html: `
-      <video
-        style="height: 90vh;"
-        loop
-        autoplay
-        muted
-        src="./images/demo-counter.mp4"
-      />
-    `,
-  }}
-/>
-
----
-
-## A more complex example?
+## An example?
 
 <img src="./images/wiki-client.png" />
 
@@ -591,7 +260,7 @@ const Wiki = () => {
   // init keypress handling, useStates and so on...
   return (
     <AppContext.Provider value={{ ...statesAndSetters }}>
-      <Box flexDirection="column">
+      <Box flexDirection="column" marginY={1}>
         <InstantSearchBar />
         <ResultsListing />
         <StatusInfoBar />
@@ -603,83 +272,8 @@ const Wiki = () => {
 render(<Wiki />);
 ```
 
-Outline of the UI <Emoji svg text="☝️" />
+Just like building any React app <Emoji svg text="☝️" />
 
----
-
-```jsx
-const InstantSearchBar = () => {
-  const appContext = useContext(AppContext);
-  return (
-    <Box marginY={1}>
-      <Text bold>Keywords: </Text>
-      <TextInput
-        value={appContext.input}
-        onChange={value => handleChange(value, appContext)}
-      />
-    </Box>
-  );
-};
-```
-
-Inside the search bar <Emoji svg text="☝️" />
-
----
-
-<!-- prettier-ignore -->
-```jsx
-const ResultsListing = () => {
-  const appContext = useContext(AppContext);
-  return (
-    <Box marginY={1} flexDirection="column">
-      {appContext.results.map((result, i) => (
-          <ResultCard result={result} key={i}
-          isSelected={appContext.selectedIndex === i} />
-        ))}
-    </Box>
-  );
-};
-```
-
-Inside the result listing section <Emoji svg text="☝️" />
-
----
-
-```jsx
-const ResultCard = ({ result, isSelected }) => {
-  return (
-    <Box marginBottom={1}>
-      <Box flexDirection="column">
-        <Color blue bgRed={isSelected}>
-          <Text bold>{result.title}</Text>
-        </Color>
-        <Box textWrap="wrap">{result.description}</Box>
-      </Box>
-    </Box>
-  );
-};
-```
-
-Inside a single result card <Emoji svg text="☝️" />
-
----
-
-```jsx
-const StatusInfoBar = () => {
-  const appContext = useContext(AppContext);
-  return (
-    <Box marginY={1}>
-      {!!appContext.results.length && (
-        <Color gray>
-          <Text bold>Found {appContext.results.length} results!</Text>
-        </Color>
-      )}
-    </Box>
-  );
-};
-```
-
-The status info bar <Emoji svg text="☝️" />
 
 ---
 
@@ -759,68 +353,11 @@ Super cool.
 
 ---
 
-## But do we always ask our users to...
+## Check out `react-blessed` too!
 
-### `git clone => npm install => node index.js`?
+### Renders to `blessed` widgets
 
-## They sure don’t look production-ready to me <Emoji svg text="😅" />
-
----
-
-# We can fix this <Emoji svg text="💪" />
-
----
-
-### Shebang <Emoji svg text="#️⃣⚠️" />
-
-```js
-#!/usr/bin/env node
-
-// real script starts here...
-console.log("Hello world!");
-```
-
-Put a Shebang at the beginning of the entrance JS file
-
----
-
-### Executable <Emoji svg text="💥" />
-
-```bash
-$ chmod +x dist/index.js
-```
-
-Flag the entrance JS file as an executable
-
----
-
-### Specify `bin` in `package.json`
-
-```json
-{
-  // blah blah blah
-  "description": "My awesome CLI tool!",
-  "bin": {
-    "awesome": "./dist/index.js"
-  }
-  // blah blah blah
-}
-```
-
-For installing into global `PATH`
-
----
-
-# Now you can run `npm link` <Emoji svg text=":D" />
-
-<Appear>
-  <h2>Or publish on the public <i>npm</i> registry</h2>
-</Appear>
-
-<Notes>
-This will let npm create a symlink in the npm global installs folder, pointing to your project. Essentially doing a private global installation
-
-</Notes>
+### More suitable for fullscreen apps
 
 ---
 
@@ -862,8 +399,7 @@ NPM modules
 
 - [Ink](https://github.com/vadimdemedes/ink)
 - [Pastel](https://github.com/vadimdemedes/pastel)
-- [log-update](https://github.com/sindresorhus/log-update)
-- [chalk](https://github.com/chalk/chalk)
+- [React Blessed](https://github.com/Yomguithereal/react-blessed)
 
 Articles
 
@@ -874,6 +410,4 @@ Articles
 
 Images
 
-- [VT100](https://en.wikipedia.org/wiki/VT100#/media/File:DEC_VT100_terminal.jpg)
-- [Flexbox animations](https://www.freecodecamp.org/news/an-animated-guide-to-flexbox-d280cf6afc35/)
 - [That's all folks](https://twitter.com/ontariocofc/status/803779593631105024)

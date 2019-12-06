@@ -1,12 +1,12 @@
 <p align="center">
-  <a href="https://tsberlin-node-cli-talk.netlify.com/">
-    <img alt="Delightful Command-Line Interfaces with Node and Ink 🌈" src="https://tsberlin-node-cli-talk.netlify.com/cover.png" />
+  <a href="https://reactdayberlin-node-cli-talk.netlify.com/">
+    <img alt="Delightful Command-Line Interfaces with Node and Ink 🌈" src="https://reactdayberlin-node-cli-talk.netlify.com/cover.png" />
   </a>
 </p>
 
 <p align="center">
   <strong>
-    Slides hosted live at <a href="https://tsberlin-node-cli-talk.netlify.com/">https://tsberlin-node-cli-talk.netlify.com/</a> 😁
+    Slides hosted live at <a href="https://reactdayberlin-node-cli-talk.netlify.com/">https://reactdayberlin-node-cli-talk.netlify.com/</a> 😁
   </strong>
 </p>
 
@@ -16,9 +16,7 @@ Ping me on Twitter <a href="https://twitter.com/hexrcs">@hexrcs</a> if you've go
 
 ---
 
-Text based CLI tools are wonderful. They are fast, lightweight, and universally accessible. Best of all - building them in modern JavaScript is a delightful experience.
-
-After a quick overview of the history of CLI tools and how they really work, you will be introduced to the Node.js ecosystem for building CLI tools. We will then take a deeper look at Ink v2 - a super awesome library that allows us to use React and Flexbox to create complex, dynamic, and interactive command-line interfaces.
+Text-based CLI tools are great. They are fast, lightweight, and universally accessible. But what does CLI have to do with React? In this lightning talk, we will have a look at Ink - a wonderful custom React renderer that allows us to use Flexbox to create excellent command-line interfaces with ease. Want to create a companion CLI tool for the next big thing that you are working on? Build it with React!
 
 ## Usage
 
@@ -38,8 +36,7 @@ Fonts are [Fira Sans](https://github.com/mozilla/Fira) and [Fira Code](https://g
 
 - [Ink](https://github.com/vadimdemedes/ink)
 - [Pastel](https://github.com/vadimdemedes/pastel)
-- [log-update](https://github.com/sindresorhus/log-update)
-- [chalk](https://github.com/chalk/chalk)
+- [React Blessed](https://github.com/Yomguithereal/react-blessed)
 
 **Articles**
 
@@ -50,8 +47,6 @@ Fonts are [Fira Sans](https://github.com/mozilla/Fira) and [Fira Code](https://g
 
 **Images**
 
-- [VT100](https://en.wikipedia.org/wiki/VT100#/media/File:DEC_VT100_terminal.jpg)
-- [Flexbox animations](https://www.freecodecamp.org/news/an-animated-guide-to-flexbox-d280cf6afc35/)
 - [That's all folks](https://twitter.com/ontariocofc/status/803779593631105024)
 
 ## License
